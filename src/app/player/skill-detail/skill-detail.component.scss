@@ -1,0 +1,47 @@
+.rune-sub-header {
+	display: flex;
+	margin-bottom: 16px;
+	align-items: center;
+
+	h2 {
+		margin: 0;
+
+		@media screen and (max-width: 769px) {
+			font-size: 18px;
+		}
+	}
+
+	button {
+		margin-right: 8px;
+	}
+}
+
+.rune-info-container {
+	table {
+		width: 100%;
+
+		th {
+			text-align: left;
+			font-weight: bold;
+		}
+
+		td {
+			font-family: 'Courier New', monospace;
+		}
+
+		+ table {
+			margin-top: 16px;
+		}
+	}
+}
+
+.rune-chart-container {
+	margin-top: 16px;
+	height: 500px;
+	max-height: 500px;
+
+	@media screen and (max-width: 769px) {
+		height: 300px;
+		max-height: 300px;
+	}
+}

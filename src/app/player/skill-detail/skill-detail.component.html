@@ -1,0 +1,84 @@
+<div *ngIf="!loading; else loadingTemplate">
+	<div class="rune-sub-header">
+		<button mat-icon-button matTooltip="Go Back" [routerLink]="backRoute"><mat-icon>arrow_back</mat-icon></button>
+		<h2 class="mat-title">{{ skillName }} Monthly Gains</h2>
+	</div>
+
+	<mat-card class="rune-info-container">
+		<table *ngIf="!isMobileSize; else mobileTableTemplate">
+			<thead>
+				<tr>
+					<th>Level</th>
+					<th>XP</th>
+					<th>Total XP Gain</th>
+					<th>Average XP Gain</th>
+					<th>Gains This Month</th>
+					<th>Rank This Month</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>{{ currentLevel }}</td>
+					<td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
+					<td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
+					<td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
+					<td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
+					<td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<ng-template #mobileTableTemplate>
+			<table>
+				<thead>
+					<tr>
+						<th>Level</th>
+						<th>XP</th>
+						<th>Total XP Gain</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>{{ currentLevel }}</td>
+						<td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
+						<td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Average XP Gain</th>
+						<th>Gains This Month</th>
+						<th>Rank This Month</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
+						<td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
+						<td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</ng-template>
+	</mat-card>
+
+	<mat-card class="rune-chart-container">
+		<canvas baseChart
+				[datasets]="barChartData"
+				[labels]="barChartLabels"
+				[options]="barChartOptions"
+				[legend]="barChartLegend"
+				[colors]="barChartColors"
+				[chartType]="barChartType"></canvas>
+	</mat-card>
+</div>
+
+<ng-template #loadingTemplate>
+	<rune-loader></rune-loader>
+</ng-template>

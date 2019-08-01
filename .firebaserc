@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "runetrack": {
+      "hosting": {
+        "runetrack-ui": [
+          "runetrack"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.rune-skill-overview {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 4px;
+
+	.rune-skill-header {
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+
+		@media screen and (max-width: 769px) {
+			font-size: 18px;
+		}
+
+		.skill-icon {
+			margin-right: 8px;
+		}
+
+		.rune-skill-name {
+			flex: 1 1 auto;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			cursor: pointer;
+			font-size: 14px;
+		}
+	}
+
+	.mat-divider {
+		position: relative;
+		margin: 8px 0;
+	}
+
+	.rune-skill-content {
+		margin-top: 8px;
+
+		.rune-next-level {
+			display: flex;
+			align-items: center;
+			margin: 8px 3px;
+
+			.rune-next-level-bar {
+				display: flex;
+				flex: 1 1 auto;
+				margin: 0 4px;
+
+				.rune-complete, .rune-incomplete {
+					height: 16px;
+				}
+
+				.rune-complete {
+					background: #53fc24;
+				}
+
+				.rune-incomplete {
+					background: rgba(255, 255, 255, 0.12);
+				}
+			}
+		}
+
+		table {
+			width: 100%;
+
+			th {
+				text-align: left;
+				font-weight: bold;
+			}
+
+			+ table {
+				margin-top: 8px;
+			}
+		}
+	}
+}

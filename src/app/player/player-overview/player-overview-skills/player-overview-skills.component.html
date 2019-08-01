@@ -1,0 +1,20 @@
+<mat-card [ngClass]="{ 'rune-tabbed': tabbed }">
+	<div class="rune-full-skill">
+		<div class="rune-skill-header">
+			<div class="skill-icon icon-overall"></div>
+			<div class="rune-skill-name">{{ profile.totalskill | number: '1.0-0' }}&nbsp; | &nbsp;{{ profile.totalxp | number: '1.0-0' }}</div>
+		</div>
+	</div>
+
+	<rune-skill-overview *ngIf="displayedSkillId !== null"
+						 [skill]="skills[displayedSkillId]"
+						 [xpGains]="xpGains[displayedSkillId]"
+						 (close)="closeSkillOverview()"></rune-skill-overview>
+
+	<div class="rune-skill" *ngFor="let skillId of skillOrder"
+		 [matTooltip]="skillTooltip(skills[skillId])" matTooltipClass="rune-skill-tooltip"
+		 (click)="loadXpGains(skillId)">
+		<div [className]="skillId | runeSkillIcon"></div>
+		<div class="rune-skill-level">{{ skills[skillId].level }}</div>
+	</div>
+</mat-card>

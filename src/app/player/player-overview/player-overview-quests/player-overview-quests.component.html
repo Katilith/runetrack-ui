@@ -1,0 +1,28 @@
+<mat-card [ngClass]="{ 'rune-tabbed': tabbed }">
+	<div class="rune-quests-header">
+		<img class="rune-quest-icon" src="assets/img/quest-icon.png" alt="[Quest Icon]" />
+		<h2 class="mat-title">Quests</h2>
+	</div>
+
+	<rune-loader *ngIf="loading; else questLogTemplate" [overlay]="false"></rune-loader>
+</mat-card>
+
+<ng-template #questLogTemplate>
+	<div class="rune-quest-points">
+		<strong>Quest Points:</strong>&nbsp;
+		<span>{{ completedQuestPoints }} / {{ totalQuestPoints }}</span>
+	</div>
+
+	<div class="rune-quest-completion" [matTooltip]="questOverviewTooltip" matTooltipClass="rune-quest-overview-tooltip">
+		<div class="rune-quests-completed" [ngStyle]="{ width: questCompletePercentage + '%' }"></div>
+		<div class="rune-quests-started" [ngStyle]="{ width: questStartedPercentage + '%' }"></div>
+		<div class="rune-quests-not-started" [ngStyle]="{ width: questNotStartedPercentage + '%' }"></div>
+	</div>
+
+	<div class="rune-quest-list">
+		<a [className]="quest | runeQuestClass" [href]="'http://runescape.wiki/w/' + quest.title" target="_blank"
+		   *ngFor="let quest of quests">
+			{{ quest.title }}
+		</a>
+	</div>
+</ng-template>

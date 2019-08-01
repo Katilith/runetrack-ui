@@ -1,0 +1,57 @@
+<div  class="rune-skill-overview">
+	<div class="rune-skill-header">
+		<div [className]="skill.id | runeSkillIcon"></div>
+		<div class="rune-skill-name">{{ skillNames[skill.id] }}</div>
+		<rune-loader type="SMALL" size="20" *ngIf="!xpGains"></rune-loader>
+		<a [routerLink]="[ 'skills', skillNames[skill.id] ]"><mat-icon>bar_chart</mat-icon>Monthly</a>
+		<button mat-icon-button (click)="close.emit()"><mat-icon>close</mat-icon></button>
+	</div>
+
+	<mat-divider></mat-divider>
+
+	<div class="rune-skill-content">
+		<table>
+			<thead>
+				<tr>
+					<th>Level</th>
+					<th>XP</th>
+					<th>Rank</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>{{ skill.level }}</td>
+					<td>{{ skill.xp | number: '1.0-0' }}</td>
+					<td>{{ skill.rank | number: '1.0-0' }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="rune-next-level" *ngIf="nextLevel !== null" [matTooltip]="remainingXpTooltip" matTooltipClass="rune-skill-tooltip">
+			<div>{{ skill.level }}</div>
+			<div class="rune-next-level-bar">
+				<div class="rune-complete" [ngStyle]="{ width: completePercent + '%' }"></div>
+				<div class="rune-incomplete" [ngStyle]="{ width: percentToNextLevel + '%' }"></div>
+			</div>
+			<div>{{ nextLevel }}</div>
+		</div>
+
+		<table *ngIf="xpGains">
+			<thead>
+				<tr>
+					<th>Total XP Gain</th>
+					<th>Average XP Gain</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
+					<td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

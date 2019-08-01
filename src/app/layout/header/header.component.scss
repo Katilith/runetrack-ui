@@ -1,0 +1,24 @@
+.mat-toolbar {
+	position: fixed;
+	top: 0;
+	display: flex;
+	z-index: 30;
+
+	img {
+		height: 70%;
+		margin-right: 8px;
+		cursor: pointer;
+	}
+
+	h1 {
+		cursor: pointer;
+	}
+
+	.rune-spacer {
+		flex: 1 1 auto;
+	}
+
+	mat-form-field {
+		width: 150px;
+	}
+}

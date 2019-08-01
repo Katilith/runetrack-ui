@@ -1,0 +1,21 @@
+<div class="rune-content" *ngIf="!isMobileSize; else mobileTemplate">
+	<rune-player-overview-skills [profile]="profile"></rune-player-overview-skills>
+	<rune-player-overview-quests [playerName]="playerName"></rune-player-overview-quests>
+	<rune-player-overview-activity [activities]="profile.activities"></rune-player-overview-activity>
+</div>
+
+<ng-template #mobileTemplate>
+	<mat-tab-group>
+		<mat-tab label="Skills">
+			<rune-player-overview-skills [profile]="profile" [tabbed]="true"></rune-player-overview-skills>
+		</mat-tab>
+
+		<mat-tab label="Quests">
+			<rune-player-overview-quests [playerName]="playerName" [tabbed]="true"></rune-player-overview-quests>
+		</mat-tab>
+
+		<mat-tab label="Activity">
+			<rune-player-overview-activity [activities]="profile.activities" [tabbed]="true"></rune-player-overview-activity>
+		</mat-tab>
+	</mat-tab-group>
+</ng-template>

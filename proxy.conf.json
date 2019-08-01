@@ -1,0 +1,36 @@
+{
+	"/rs-apps": {
+		"target": {
+			"host": "apps.runescape.com",
+			"protocol": "https:",
+			"port": 443
+		},
+		"secure": false,
+		"changeOrigin": true,
+		"logLevel": "info",
+		"pathRewrite": {
+			"^/rs-apps": ""
+		}
+	},
+	"/rs-avatars": {
+		"target": {
+			"host": "secure.runescape.com",
+			"protocol": "https:",
+			"port": 443
+		},
+		"secure": false,
+		"changeOrigin": true,
+		"logLevel": "info",
+		"pathRewrite": {
+			"^/rs-avatars": ""
+		}
+	},
+	"/rs-services": {
+		"target": "http://localhost:8080",
+		"secure": false,
+		"logLevel": "info",
+		"pathRewrite": {
+			"^/rs-services": ""
+		}
+	}
+}

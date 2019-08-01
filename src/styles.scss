@@ -1,0 +1,259 @@
+@import 'theme';
+
+@include mat-core();
+@include angular-material-theme($app-theme);
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+a {
+	color: mat-color($app-primary, 500);
+}
+
+.mat-tooltip {
+	font-size: 14px;
+}
+
+.mat-card.rune-tabbed {
+	margin: 0 !important;
+	min-width: auto !important;
+	box-shadow: none;
+	padding: 16px 0 0 0;
+	background: transparent;
+}
+
+.rune-skill-tooltip, .rune-quest-overview-tooltip {
+	white-space: pre;
+	font-family: 'Courier New', monospace;
+}
+
+.rune-skill-tooltip::first-line {
+	font-weight: bold;
+}
+
+.rune-quest-overview-tooltip {
+	width: 350px;
+}
+
+.rune-small-field {
+	.mat-form-field-infix {
+		border-top-width: 0;
+		width: 140px;
+		padding: .75em 0 .75em 0;
+	}
+
+	.mat-form-field-outline {
+		top: 0 !important;
+	}
+
+	.mat-form-field-wrapper {
+		padding-bottom: 0;
+	}
+
+	.mat-form-field-flex {
+		align-items: center;
+	}
+
+	.mat-form-field-prefix {
+		top: 0 !important;
+
+		.mat-icon {
+			height: 18px;
+			width: 18px;
+			font-size: 18px;
+			line-height: 18px;
+			padding-right: 4px;
+		}
+	}
+
+	.mat-form-field-suffix {
+		top: 0 !important;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.mat-form-field input {
+		font-size: 16px;
+	}
+}
+
+.quest-icon, .skill-icon, .rs-icon {
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+
+	&:not(.skill-icon) {
+		background-size: cover !important;
+	}
+}
+
+.maxcape-icon {
+	background: url('assets/img/maxcape-icon.png') 0 0 no-repeat transparent;
+}
+
+.equipment-icon {
+	background: url('assets/img/equipment-icon.png') 0 0 no-repeat transparent;
+}
+
+.skills-icon {
+	background: url('assets/img/skills-icon.png') 0 0 no-repeat transparent;
+}
+
+.coins-icon {
+	background: url('assets/img/coins-icon.png') 0 0 no-repeat transparent;
+}
+
+.activity-icon {
+	background: url('assets/img/activity-icon.png') 0 0 no-repeat transparent;
+}
+
+.clue-scroll-icon {
+	background: url('assets/img/clue-scroll-icon.png') 0 0 no-repeat transparent;
+}
+
+.backpack-icon {
+	background: url('assets/img/backpack-icon.png') 0 0 no-repeat transparent;
+}
+
+.case-icon {
+	background: url('assets/img/case-icon.png') 0 0 no-repeat transparent;
+}
+
+.clan-chat-icon {
+	background: url('assets/img/clan-chat-icon.png') 0 0 no-repeat transparent;
+}
+
+.music-icon {
+	background: url('assets/img/music-icon.png') 0 0 no-repeat transparent;
+}
+
+.combat-icon {
+	background: url('assets/img/combat-level-icon.png') 0 0 no-repeat transparent;
+}
+
+.quest-icon {
+	background: url('assets/img/quest-icon.png') 0 0 no-repeat transparent;
+}
+
+.skill-icon {
+	background: url('assets/img/skill-icons.png') 0 center no-repeat transparent;
+}
+
+.icon-overall {
+	background: url('assets/img/other-icons.png') -38px -35px no-repeat transparent
+}
+
+.icon-attack {
+	background-position: -1px center
+}
+
+.icon-constitution {
+	background-position: -33px center
+}
+
+.icon-mining {
+	background-position: -65px center
+}
+
+.icon-strength {
+	background-position: -97px center
+}
+
+.icon-agility {
+	background-position: -129px center
+}
+
+.icon-smithing {
+	background-position: -161px center
+}
+
+.icon-defence {
+	background-position: -193px center
+}
+
+.icon-herblore {
+	background-position: -225px center
+}
+
+.icon-fishing {
+	background-position: -257px center
+}
+
+.icon-ranged {
+	background-position: -289px center
+}
+
+.icon-thieving {
+	background-position: -321px center
+}
+
+.icon-cooking {
+	background-position: -353px center
+}
+
+.icon-prayer {
+	background-position: -385px center
+}
+
+.icon-crafting {
+	background-position: -417px center
+}
+
+.icon-firemaking {
+	background-position: -449px center
+}
+
+.icon-magic {
+	background-position: -481px center
+}
+
+.icon-fletching {
+	background-position: -513px center
+}
+
+.icon-woodcutting {
+	background-position: -545px center
+}
+
+.icon-runecrafting {
+	background-position: -577px center
+}
+
+.icon-slayer {
+	background-position: -609px center
+}
+
+.icon-farming {
+	background-position: -641px center
+}
+
+.icon-construction {
+	background-position: -673px center
+}
+
+.icon-hunter {
+	background-position: -705px center
+}
+
+.icon-summoning {
+	background-position: -737px center
+}
+
+.icon-dungeoneering {
+	background-position: -769px center
+}
+
+.icon-divination {
+	background-position: -801px center
+}
+
+.icon-invention {
+	background-position: -833px center
+}
+
+.icon-runecraft {
+	background-position: -577px center
+}

@@ -1,0 +1,38 @@
+.rune-content {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -16px -16px -16px;
+
+	rune-player-overview-activity, rune-player-overview-quests, rune-player-overview-skills {
+		width: calc(100% / 3);
+
+		@media screen and (max-width: 1159px) {
+			width: 50%;
+		}
+
+		@media screen and (max-width: 769px) {
+			width: 100%;
+		}
+	}
+}
+
+.rune-error {
+	padding: 32px;
+	text-align: center;
+
+	span {
+		display: flex;
+		justify-content: center;
+
+		.mat-icon {
+			$size: 40px;
+
+			width: $size;
+			height: $size;
+			font-size: $size;
+			line-height: $size;
+
+			padding-right: 16px;
+		}
+	}
+}
