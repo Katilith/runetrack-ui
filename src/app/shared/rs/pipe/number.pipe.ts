@@ -48,7 +48,7 @@ export class NumberPipe implements PipeTransform {
 			}
 		}
 		
-		return value;
+		return str;
 	}
 	
 }

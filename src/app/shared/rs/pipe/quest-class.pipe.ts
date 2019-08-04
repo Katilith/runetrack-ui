@@ -4,7 +4,7 @@ import { PlayerQuest } from '../rs.domain';
 @Pipe({
 	name: 'runeQuestClass'
 })
-export class QuestClassPipePipe implements PipeTransform {
+export class QuestClassPipe implements PipeTransform {
 
 	public transform(value: PlayerQuest, ...args: any[]): any {
 		let status = 'not-started';

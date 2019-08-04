@@ -9,6 +9,9 @@ import * as moment from 'moment';
 const RS_APPS = environment.rsApi.apps;
 const RS_AVATARS = environment.rsApi.avatars;
 
+/**
+ * @TODO Unit Testing
+ */
 @Injectable({
 	providedIn: 'root'
 })
