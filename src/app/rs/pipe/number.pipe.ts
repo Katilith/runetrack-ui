@@ -15,16 +15,16 @@ export class NumberPipe implements PipeTransform {
 		} else if(value > 9999999) { // 9,999,999 (10m range)
 			const response = str.substring(0, 2);
 			
-			if(str.charAt(3) !== '0') {
-				return response + '.' + str.charAt(3) + 'M';
+			if(str.charAt(2) !== '0') {
+				return response + '.' + str.charAt(2) + 'M';
 			} else {
 				return response + 'M';
 			}
 		} else if(value > 999999) { // 999,999 (1m range)
 			const response = str.substring(0, 1);
 			
-			if(str.charAt(2) !== '0') {
-				return response + '.' + str.charAt(2) + 'M';
+			if(str.charAt(1) !== '0') {
+				return response + '.' + str.charAt(1) + 'M';
 			} else {
 				return response + 'M';
 			}
@@ -33,16 +33,16 @@ export class NumberPipe implements PipeTransform {
 		} else if(value > 9999) { // 9,999 (10k range)
 			const response = str.substring(0, 2);
 			
-			if(str.charAt(3) !== '0') {
-				return response + '.' + str.charAt(3) + 'K';
+			if(str.charAt(2) !== '0') {
+				return response + '.' + str.charAt(2) + 'K';
 			} else {
 				return response + 'K';
 			}
 		} else if(value > 999) { // 999 (1k range)
 			const response = str.substring(0, 1);
-			
-			if(str.charAt(2) !== '0') {
-				return response + '.' + str.charAt(2) + 'K';
+
+			if(str.charAt(1) !== '0') {
+				return response + '.' + str.charAt(1) + 'K';
 			} else {
 				return response + 'K';
 			}

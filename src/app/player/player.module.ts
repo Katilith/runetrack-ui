@@ -10,6 +10,7 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { PlayerService } from './player.service';
 import { LoaderModule } from '../loader/loader.module';
 import { NumberPipe } from '../rs/pipe/number.pipe';
+import { ErrorModule } from '../error/error.module';
 
 @NgModule({
 	declarations: [ PlayerComponent, SkillDetailComponent ],
@@ -23,7 +24,8 @@ import { NumberPipe } from '../rs/pipe/number.pipe';
 		ChartsModule,
 		PlayerRoutingModule,
 		PlayerOverviewModule,
-		LoaderModule
+		LoaderModule,
+		ErrorModule
 	]
 })
 export class PlayerModule {

@@ -115,6 +115,10 @@ export class SkillDetailComponent implements OnInit {
 	}
 	
 	private formatChartData(skip: number = 0): void {
+		if(this.xpGains.monthData.length === 0) {
+			return;
+		}
+
 		this.skip = skip;
 		this.barChartData[0].data = [];
 		this.barChartLabels = [];

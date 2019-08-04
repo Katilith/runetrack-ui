@@ -43,6 +43,22 @@ export class PlayerComponent implements OnInit {
 		this.rsService.removeFavoritePlayer();
 		this.playerService.isFavorite = false;
 	}
+
+	public get errorInfo() {
+		if(!this.error) {
+			return {};
+		}
+
+		if(this.error === 'PROFILE_PRIVATE') {
+			return { icon: 'lock', message: 'This user\'s profile is set to private.' };
+		} else if(this.error === 'NO_PROFILE') {
+			return { icon: 'person_outline', message: 'The requested user was not found.' };
+		} else if(this.error === 'NOT_A_MEMBER') {
+			return { icon: 'person_outline', message: 'This player is not a member.' };
+		} else {
+			return { icon: 'error_outline', message: 'An unknown error has occurred, please try again later.' };
+		}
+	}
 	
 	public get isMobileSize() {
 		return this.mobileService.isMobileSize;

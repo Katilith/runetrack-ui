@@ -7,10 +7,8 @@
 <ng-template #loadedTemplate>
 	<ng-container *ngIf="error; else profileTemplate">
 		<h1 class="mat-display-1 rune-error">
-			<span *ngIf="error === 'PROFILE_PRIVATE'"><mat-icon>lock</mat-icon> This user's profile is set to private.</span>
-			<span *ngIf="error === 'NO_PROFILE'"><mat-icon>person_outline</mat-icon> The requested user was not found.</span>
-			<span *ngIf="error === 'UNKNOWN_ERROR'"><mat-icon>error_outline</mat-icon> An unknown error has occurred, please try again later.</span>
-			<span *ngIf="error === 'NOT_A_MEMBER'"><mat-icon>person_outline</mat-icon> This player is not a member.</span>
+			<rune-error [fontSize]="32" [padding]="32" [center]="!isMobileSize"
+						[message]="errorInfo.message" [icon]="errorInfo.icon"></rune-error>
 		</h1>
 	</ng-container>
 </ng-template>

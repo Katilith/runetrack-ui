@@ -17,6 +17,8 @@
 }
 
 .rune-info-container {
+	font-size: 16px;
+	
 	table {
 		width: 100%;
 
@@ -37,11 +39,11 @@
 
 .rune-chart-container {
 	margin-top: 16px;
-	height: 500px;
-	max-height: 500px;
+	height: 400px;
+	max-height: 400px;
 
 	@media screen and (max-width: 769px) {
-		height: 300px;
-		max-height: 300px;
+		height: 250px;
+		max-height: 250px;
 	}
 }
