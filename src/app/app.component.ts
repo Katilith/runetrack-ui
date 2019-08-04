@@ -15,24 +15,36 @@ export class AppComponent implements OnInit {
 	}
 	
 	public ngOnInit(): void {
+		if(this.shouldShowIosAppNotif()) {
+			this.openIosAppNotif();
+		}
+	}
+
+	private openIosAppNotif(): void {
+		this.snackBar.openFromComponent(IosInstallComponent, {
+			duration: 15000,
+			horizontalPosition: 'start',
+			panelClass: [ 'mat-elevation-z3' ]
+		}).afterDismissed().subscribe(() => localStorage.setItem('iosAppInstallNotif', 'true'));
+	}
+
+	private shouldShowIosAppNotif(): boolean {
 		const isIos = () => {
 			const userAgent = window.navigator.userAgent.toLowerCase();
 			return /iphone|ipad|ipod/.test(userAgent);
 		};
-		
+
 		const isInStandaloneMode = () => ('standalone' in (window as any).navigator) && ((window as any).navigator.standalone);
-		
+
 		if(isIos() && !isInStandaloneMode()) {
 			const previouslySeenNotif = localStorage.getItem('iosAppInstallNotif');
-			
+
 			if(!previouslySeenNotif) {
-				this.snackBar.openFromComponent(IosInstallComponent, {
-					duration: 15000,
-					horizontalPosition: 'start',
-					panelClass: [ 'mat-elevation-z3' ]
-				}).afterDismissed().subscribe(() => localStorage.setItem('iosAppInstallNotif', 'true'));
+				return true;
 			}
 		}
+
+		return false;
 	}
 	
 	@HostListener('window:resize', [ '$event' ])

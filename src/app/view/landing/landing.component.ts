@@ -29,7 +29,7 @@ export class LandingComponent implements OnInit {
 			return;
 		}
 		
-		this.router.navigate([ '/', username ]).then(() => console.log('then'), () => console.error('catch'));
+		this.router.navigate([ '/', username ]);
 	}
 	
 	public get loading() {

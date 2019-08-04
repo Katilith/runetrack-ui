@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
+import { version } from '../../util/version';
 
 describe('FooterComponent', () => {
 	let component: FooterComponent;
@@ -21,5 +22,9 @@ describe('FooterComponent', () => {
 	
 	it('should create', () => {
 		expect(component).toBeTruthy();
+	});
+
+	it('should show the correct version number', () => {
+		expect(component.version).toBe(version);
 	});
 });

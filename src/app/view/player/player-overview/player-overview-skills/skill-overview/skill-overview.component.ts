@@ -33,6 +33,10 @@ export class SkillOverviewComponent implements OnInit, OnChanges {
 	}
 	
 	private calculateValues(skill: PlayerSkill): void {
+		if(!skill) {
+			return;
+		}
+
 		this._nextLevel = null;
 		this._nextLevelXp = 0;
 		this._remainingXpToNextLevel = 0;
@@ -47,15 +51,15 @@ export class SkillOverviewComponent implements OnInit, OnChanges {
 			maxLevel = 120;
 		}
 		
-		const nextLevel = this.skill.level + 1;
+		const nextLevel = skill.level + 1;
 		if(nextLevel > maxLevel) {
 			return;
 		}
 		
 		this._nextLevel = nextLevel;
 		this._nextLevelXp = getXpRequiredForLevel(nextLevel, elite);
-		this._remainingXpToNextLevel = Math.floor(this._nextLevelXp - this.skill.xp);
-		const currentLevelXp = getXpRequiredForLevel(this.skill.level, elite);
+		this._remainingXpToNextLevel = Math.floor(this._nextLevelXp - skill.xp);
+		const currentLevelXp = getXpRequiredForLevel(skill.level, elite);
 		const xpBetweenLevels = this._nextLevelXp - currentLevelXp;
 		
 		this._remainingXpTooltip = [

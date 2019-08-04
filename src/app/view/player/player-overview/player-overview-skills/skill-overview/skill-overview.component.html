@@ -1,4 +1,4 @@
-<div  class="rune-skill-overview">
+<div  class="rune-skill-overview" *ngIf="skill">
 	<div class="rune-skill-header">
 		<div [className]="skill.id | runeSkillIcon"></div>
 		<div class="rune-skill-name">{{ skillNames[skill.id] }}</div>

@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
+import { LandingModule } from './landing.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LandingComponent', () => {
 	let component: LandingComponent;
@@ -8,9 +12,8 @@ describe('LandingComponent', () => {
 	
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ LandingComponent ]
-		})
-			.compileComponents();
+			imports: [ BrowserAnimationsModule, LandingModule, RouterTestingModule, HttpClientTestingModule ]
+		}).compileComponents();
 	}));
 	
 	beforeEach(() => {

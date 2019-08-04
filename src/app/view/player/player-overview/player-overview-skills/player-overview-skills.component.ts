@@ -44,6 +44,10 @@ export class PlayerOverviewSkillsComponent implements OnInit {
 	}
 
 	private refactorSkillsArray(skills: PlayerSkill[]): void {
+		if(skills.length === 0) {
+			return;
+		}
+
 		this._skills = new Array(skillOrder.length);
 
 		for(const skill of skills) {
@@ -52,6 +56,10 @@ export class PlayerOverviewSkillsComponent implements OnInit {
 	}
 
 	public skillTooltip(skill: PlayerSkill): string {
+		if(!skill) {
+			return '';
+		}
+
 		const tooltipArray = [ skillNames[ skill.id ],
 			`Level: ${ skill.level }`,
 			`XP:    ${ this.decimalPipe.transform(skill.xp, '1.0-0') }` ];

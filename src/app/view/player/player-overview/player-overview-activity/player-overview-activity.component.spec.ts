@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerOverviewActivityComponent } from './player-overview-activity.component';
+import { RsModule } from '../../../../shared/rs/rs.module';
+import { MatCardModule } from '@angular/material';
 
 describe('PlayerOverviewActivityComponent', () => {
 	let component: PlayerOverviewActivityComponent;
@@ -8,9 +10,9 @@ describe('PlayerOverviewActivityComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ PlayerOverviewActivityComponent ]
-		})
-			.compileComponents();
+			declarations: [ PlayerOverviewActivityComponent ],
+			imports: [ RsModule, MatCardModule ]
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

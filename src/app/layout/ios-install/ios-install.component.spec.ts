@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IosInstallComponent } from './ios-install.component';
+import { MatButtonModule, MatIconModule, MatSnackBarRef } from '@angular/material';
 
 describe('IosInstallComponent', () => {
 	let component: IosInstallComponent;
@@ -8,9 +9,15 @@ describe('IosInstallComponent', () => {
 	
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ IosInstallComponent ]
-		})
-			.compileComponents();
+			declarations: [ IosInstallComponent ],
+			imports: [ MatIconModule, MatButtonModule ],
+			providers: [
+				{
+					provide: MatSnackBarRef,
+					useValue: {}
+				}
+			]
+		}).compileComponents();
 	}));
 	
 	beforeEach(() => {
