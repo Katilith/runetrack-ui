@@ -10,7 +10,7 @@ import {
 	MatSnackBarModule
 } from '@angular/material';
 
-import { LoaderModule } from '../loader/loader.module';
+import { LoaderModule } from '../../shared/loader/loader.module';
 import { LandingComponent } from './landing.component';
 
 

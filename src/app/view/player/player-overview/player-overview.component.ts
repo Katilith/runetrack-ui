@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MobileService } from '../../layout/mobile/mobile.service';
+import { MobileService } from '../../../layout/mobile/mobile.service';
 import { PlayerService } from '../player.service';
 
 @Component({

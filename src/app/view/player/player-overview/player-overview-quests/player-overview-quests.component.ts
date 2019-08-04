@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerQuest } from '../../../rs/rs.domain';
+import { PlayerQuest } from '../../../../shared/rs/rs.domain';
 import { PlayerService } from '../../player.service';
 
 @Component({

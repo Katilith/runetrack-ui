@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './view/landing/landing.component';
 
 const routes: Routes = [
 	{
-		path: 'p/:playerName',
-		loadChildren: () => import('./player/player.module').then(m => m.PlayerModule)
-	},
-	{
-		path: 'player/:playerName',
-		loadChildren: () => import('./player/player.module').then(m => m.PlayerModule)
-	},
-	{
 		path: ':playerName',
-		loadChildren: () => import('./player/player.module').then(m => m.PlayerModule)
+		loadChildren: () => import('./view/player/player.module').then(m => m.PlayerModule)
 	},
 	{
 		path: '**',

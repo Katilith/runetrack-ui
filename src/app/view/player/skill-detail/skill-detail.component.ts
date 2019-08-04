@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlayerService } from '../player.service';
-import { skillNames, skillNamesLower } from '../../rs/rs.constants';
-import { RsService } from '../../rs/rs.service';
+import { skillNames, skillNamesLower } from '../../../shared/rs/rs.constants';
+import { RsService } from '../../../shared/rs/rs.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import * as moment from 'moment';
-import { NumberPipe } from '../../rs/pipe/number.pipe';
-import { MobileService } from '../../layout/mobile/mobile.service';
+import { NumberPipe } from '../../../shared/rs/pipe/number.pipe';
+import { MobileService } from '../../../layout/mobile/mobile.service';
 
 @Component({
 	selector: 'rune-skill-detail',

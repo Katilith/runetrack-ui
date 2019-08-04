@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerProfile, PlayerSkill } from '../../../rs/rs.domain';
+import { PlayerProfile, PlayerSkill } from '../../../../shared/rs/rs.domain';
 import { DecimalPipe } from '@angular/common';
-import { RsService } from '../../../rs/rs.service';
-import { skillNames, skillOrder } from '../../../rs/rs.constants';
+import { RsService } from '../../../../shared/rs/rs.service';
+import { skillNames, skillOrder } from '../../../../shared/rs/rs.constants';
 import { PlayerService } from '../../player.service';
 
 @Component({

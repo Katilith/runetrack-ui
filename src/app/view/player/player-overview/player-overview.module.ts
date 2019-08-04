@@ -10,8 +10,8 @@ import {
 	MatTooltipModule
 } from '@angular/material';
 
-import { RsModule } from '../../rs/rs.module';
-import { LoaderModule } from '../../loader/loader.module';
+import { RsModule } from '../../../shared/rs/rs.module';
+import { LoaderModule } from '../../../shared/loader/loader.module';
 import { PlayerOverviewSkillsComponent } from './player-overview-skills/player-overview-skills.component';
 import { PlayerOverviewQuestsComponent } from './player-overview-quests/player-overview-quests.component';
 import { PlayerOverviewComponent } from './player-overview.component';

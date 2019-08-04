@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from './player.service';
 import { ActivatedRoute } from '@angular/router';
-import { MobileService } from '../layout/mobile/mobile.service';
-import { RsService } from '../rs/rs.service';
-import { skillOrder } from '../rs/rs.constants';
+import { MobileService } from '../../layout/mobile/mobile.service';
+import { RsService } from '../../shared/rs/rs.service';
+import { skillOrder } from '../../shared/rs/rs.constants';
 
 @Component({
 	selector: 'rune-player',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { PlayerMonthlyXpGain, PlayerProfile, PlayerQuest } from '../rs/rs.domain';
-import { RsService } from '../rs/rs.service';
-import { skillOrder } from '../rs/rs.constants';
+import { PlayerMonthlyXpGain, PlayerProfile, PlayerQuest } from '../../shared/rs/rs.domain';
+import { RsService } from '../../shared/rs/rs.service';
+import { skillOrder } from '../../shared/rs/rs.constants';
 
 @Injectable()
 export class PlayerService {

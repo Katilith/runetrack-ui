@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerActivity } from '../../../rs/rs.domain';
+import { PlayerActivity } from '../../../../shared/rs/rs.domain';
 
 @Component({
 	selector: 'rune-player-overview-activity',

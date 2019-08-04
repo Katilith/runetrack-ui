@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { clearSubscription } from '../util/subscription-helper';
+import { environment } from '../../../environments/environment';
+import { clearSubscription } from '../../util/subscription-helper';
 import { MonthlyXpGainResponse, PlayerActivity, PlayerProfile, PlayerSkill, QuestDataResponse } from './rs.domain';
 import * as moment from 'moment';
 

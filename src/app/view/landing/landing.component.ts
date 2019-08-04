@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RsService } from '../rs/rs.service';
+import { RsService } from '../../shared/rs/rs.service';
 
 @Component({
 	selector: 'rune-landing',

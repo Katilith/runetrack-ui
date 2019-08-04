@@ -8,9 +8,9 @@ import { PlayerComponent } from './player.component';
 import { PlayerOverviewModule } from './player-overview/player-overview.module';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { PlayerService } from './player.service';
-import { LoaderModule } from '../loader/loader.module';
-import { NumberPipe } from '../rs/pipe/number.pipe';
-import { ErrorModule } from '../error/error.module';
+import { LoaderModule } from '../../shared/loader/loader.module';
+import { NumberPipe } from '../../shared/rs/pipe/number.pipe';
+import { ErrorModule } from '../../shared/error/error.module';
 
 @NgModule({
 	declarations: [ PlayerComponent, SkillDetailComponent ],
