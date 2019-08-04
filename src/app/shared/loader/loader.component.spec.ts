@@ -23,4 +23,21 @@ describe('LoaderComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+	
+	describe('className', () => {
+		it('should return the correct default', () => {
+			expect(component.className).toEqual('rune-large rune-overlay');
+		});
+		
+		it('should return the correct name for the type SMALL', () => {
+			component.type = 'SMALL';
+			expect(component.className).toEqual('rune-small rune-overlay');
+		});
+		
+		it('should add the proper class name if overlay is set to false', () => {
+			component.type = 'SMALL';
+			component.overlay = false;
+			expect(component.className).toEqual('rune-small');
+		});
+	});
 });
