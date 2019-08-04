@@ -1,36 +1,37 @@
 <ng-container *ngIf="loading; then loadingTemplate else loadedTemplate"></ng-container>
 
 <ng-template #loadingTemplate>
-	<rune-loader></rune-loader>
+    <rune-loader></rune-loader>
 </ng-template>
 
 <ng-template #loadedTemplate>
-	<ng-container *ngIf="error; else profileTemplate">
-		<h1 class="mat-display-1 rune-error">
-			<rune-error [fontSize]="32" [padding]="32" [center]="!isMobileSize"
-						[message]="errorInfo.message" [icon]="errorInfo.icon"></rune-error>
-		</h1>
-	</ng-container>
+    <ng-container *ngIf="error; else profileTemplate">
+        <h1 class="mat-display-1 rune-error">
+            <rune-error [fontSize]="32" [padding]="32" [center]="!isMobileSize"
+                        [message]="errorInfo.message" [icon]="errorInfo.icon"></rune-error>
+        </h1>
+    </ng-container>
 </ng-template>
 
 <ng-template #profileTemplate>
-	<div class="rune-header">
-		<img [src]="'https://secure.runescape.com/m=avatar-rs/' + profile.name + '/chat.png'" alt="" />
-		<h1 [ngClass]="{ 'mat-display-2': !isMobileSize, 'mat-display-1': isMobileSize }">{{ profile.name }}</h1>
+    <div class="rune-header">
+        <img [src]="'https://secure.runescape.com/m=avatar-rs/' + profile.name + '/chat.png'" alt=""/>
+        <h1 [ngClass]="{ 'mat-display-2': !isMobileSize, 'mat-display-1': isMobileSize }">{{ profile.name }}</h1>
 
-		<div class="rune-favorite" *ngIf="isFavorite !== null">
-			<button mat-icon-button matTooltip="Make this player my favorite" *ngIf="!isFavorite; else favoritedTemplate"
-					(click)="makeFavorite()">
-				<mat-icon>favorite_outline</mat-icon>
-			</button>
+        <div class="rune-favorite" *ngIf="isFavorite !== null">
+            <button mat-icon-button matTooltip="Make this player my favorite"
+                    *ngIf="!isFavorite; else favoritedTemplate"
+                    (click)="makeFavorite()">
+                <mat-icon>favorite_outline</mat-icon>
+            </button>
 
-			<ng-template #favoritedTemplate>
-				<button mat-icon-button matTooltip="Remove this player as my favorite" (click)="removeFavorite()">
-					<mat-icon>favorite</mat-icon>
-				</button>
-			</ng-template>
-		</div>
-	</div>
+            <ng-template #favoritedTemplate>
+                <button mat-icon-button matTooltip="Remove this player as my favorite" (click)="removeFavorite()">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+            </ng-template>
+        </div>
+    </div>
 
-	<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </ng-template>

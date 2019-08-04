@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-	providedIn: 'root'
+    providedIn: 'root'
 })
 export class MobileService {
-	
-	public screenWidth: number = 0;
-	
-	public get isMobileSize(): boolean {
-		return this.screenWidth < 769;
-	}
-	
+    
+    public screenWidth: number = 0;
+    
+    public get isMobileSize(): boolean {
+        return this.screenWidth < 769;
+    }
+    
 }

@@ -11,38 +11,38 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PlayerService } from '../../player.service';
 
 describe('PlayerOverviewSkillsComponent', () => {
-	let component: PlayerOverviewSkillsComponent;
-	let fixture: ComponentFixture<PlayerOverviewSkillsComponent>;
-
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [ PlayerOverviewSkillsComponent, SkillOverviewComponent ],
-			imports: [ RouterTestingModule, HttpClientTestingModule,
-				MatIconModule, MatTooltipModule, MatCardModule, MatDividerModule,
-				RsModule, LoaderModule ],
-			providers: [ DecimalPipe, PlayerService ]
-		}).compileComponents();
-	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(PlayerOverviewSkillsComponent);
-		component = fixture.componentInstance;
-		component.profile = {
-			name: 'Big Boss',
-			skillvalues: [
-				{
-					id: 0,
-					level: 1,
-					xp: 0,
-					rank: 0
-				}
-			],
-			loggedIn: ''
-		};
-		fixture.detectChanges();
-	});
-
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
+    let component: PlayerOverviewSkillsComponent;
+    let fixture: ComponentFixture<PlayerOverviewSkillsComponent>;
+    
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ PlayerOverviewSkillsComponent, SkillOverviewComponent ],
+            imports: [ RouterTestingModule, HttpClientTestingModule,
+                MatIconModule, MatTooltipModule, MatCardModule, MatDividerModule,
+                RsModule, LoaderModule ],
+            providers: [ DecimalPipe, PlayerService ]
+        }).compileComponents();
+    }));
+    
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PlayerOverviewSkillsComponent);
+        component = fixture.componentInstance;
+        component.profile = {
+            name: 'Big Boss',
+            skillvalues: [
+                {
+                    id: 0,
+                    level: 1,
+                    xp: 0,
+                    rank: 0
+                }
+            ],
+            loggedIn: ''
+        };
+        fixture.detectChanges();
+    });
+    
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

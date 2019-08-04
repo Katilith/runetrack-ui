@@ -12,18 +12,18 @@ import { ErrorModule } from '../../shared/error/error.module';
 import { SkillDetailModule } from './skill-detail/skill-detail.module';
 
 @NgModule({
-	declarations: [ PlayerComponent ],
-	providers: [ PlayerService, NumberPipe ],
-	imports: [
-		CommonModule,
-		MatIconModule,
-		MatButtonModule,
-		PlayerRoutingModule,
-		PlayerOverviewModule,
-		SkillDetailModule,
-		LoaderModule,
-		ErrorModule
-	]
+    declarations: [ PlayerComponent ],
+    providers: [ PlayerService, NumberPipe ],
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatButtonModule,
+        PlayerRoutingModule,
+        PlayerOverviewModule,
+        SkillDetailModule,
+        LoaderModule,
+        ErrorModule
+    ]
 })
 export class PlayerModule {
 }

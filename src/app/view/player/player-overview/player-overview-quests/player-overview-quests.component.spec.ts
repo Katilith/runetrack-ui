@@ -8,24 +8,24 @@ import { PlayerService } from '../../player.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PlayerOverviewQuestsComponent', () => {
-	let component: PlayerOverviewQuestsComponent;
-	let fixture: ComponentFixture<PlayerOverviewQuestsComponent>;
-
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [ PlayerOverviewQuestsComponent ],
-			imports: [ HttpClientTestingModule, LoaderModule, MatCardModule, MatTooltipModule, RsModule ],
-			providers: [ PlayerService ]
-		}).compileComponents();
-	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(PlayerOverviewQuestsComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
-
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
+    let component: PlayerOverviewQuestsComponent;
+    let fixture: ComponentFixture<PlayerOverviewQuestsComponent>;
+    
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ PlayerOverviewQuestsComponent ],
+            imports: [ HttpClientTestingModule, LoaderModule, MatCardModule, MatTooltipModule, RsModule ],
+            providers: [ PlayerService ]
+        }).compileComponents();
+    }));
+    
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PlayerOverviewQuestsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+    
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

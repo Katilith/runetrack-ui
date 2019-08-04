@@ -1,19 +1,19 @@
 {
-	"hosting": [
-		{
-			"target": "runetrack-ui",
-			"public": "dist/runetrack-ui",
-			"ignore": [
-				"firebase.json",
-				"**/.*",
-				"**/node_modules/**"
-			],
-			"rewrites": [
-				{
-					"source": "**",
-					"destination": "/index.html"
-				}
-			]
-		}
-	]
+    "hosting": [
+        {
+            "target": "runetrack-ui",
+            "public": "dist/runetrack-ui",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "rewrites": [
+                {
+                    "source": "**",
+                    "destination": "/index.html"
+                }
+            ]
+        }
+    ]
 }

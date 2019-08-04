@@ -2,30 +2,30 @@ $padding: 48px;
 $mobile-padding: 24px;
 
 footer {
-	text-align: center;
-	padding: 0 $padding $padding;
-	font-size: 13px;
+    text-align: center;
+    padding: 0 $padding $padding;
+    font-size: 13px;
 
-	@media screen and (max-width: 769px) {
-		padding: 0 $mobile-padding $mobile-padding;
-	}
+    @media screen and (max-width: 769px) {
+        padding: 0 $mobile-padding $mobile-padding;
+    }
 
-	.rune-disclaimer {
-		opacity: 0.3;
-	}
+    .rune-disclaimer {
+        opacity: 0.3;
+    }
 
-	.rune-version {
-		opacity: 0.2;
-		margin-top: 8px;
-	}
+    .rune-version {
+        opacity: 0.2;
+        margin-top: 8px;
+    }
 
-	a {
-		text-decoration: none;
-		color: #fff;
-		opacity: 0.7;
+    a {
+        text-decoration: none;
+        color: #fff;
+        opacity: 0.7;
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

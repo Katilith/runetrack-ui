@@ -6,12 +6,12 @@ import { ClanOverviewModule } from './clan-overview/clan-overview.module';
 
 
 @NgModule({
-	declarations: [],
-	imports: [
-		CommonModule,
-		ClansRoutingModule,
-		ClanOverviewModule
-	]
+    declarations: [],
+    imports: [
+        CommonModule,
+        ClansRoutingModule,
+        ClanOverviewModule
+    ]
 })
 export class ClansModule {
 }

@@ -1,84 +1,84 @@
 .mat-card {
-	margin: 16px;
-	min-width: 280px;
-	height: 560px;
-	max-height: 560px;
-	display: flex;
-	flex-direction: column;
+    margin: 16px;
+    min-width: 280px;
+    height: 560px;
+    max-height: 560px;
+    display: flex;
+    flex-direction: column;
 
-	&.rune-tabbed {
-		height: auto;
-		max-height: initial;
-	}
+    &.rune-tabbed {
+        height: auto;
+        max-height: initial;
+    }
 
-	.rune-quests-header {
-		display: flex;
-		align-items: center;
+    .rune-quests-header {
+        display: flex;
+        align-items: center;
 
-		.rune-quest-icon {
-			width: 32px;
-			height: 32px;
-			display: block;
-			margin-right: 8px;
-		}
+        .rune-quest-icon {
+            width: 32px;
+            height: 32px;
+            display: block;
+            margin-right: 8px;
+        }
 
-		h2 {
-			margin: 0;
-			padding: 0;
-		}
-	}
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
 
-	.rune-quest-points {
-		margin-top: 8px;
-	}
+    .rune-quest-points {
+        margin-top: 8px;
+    }
 
-	.rune-quest-completion {
-		margin-top: 8px;
-		display: flex;
+    .rune-quest-completion {
+        margin-top: 8px;
+        display: flex;
 
-		.rune-quests-completed, .rune-quests-started, .rune-quests-not-started {
-			height: 16px;
-		}
+        .rune-quests-completed, .rune-quests-started, .rune-quests-not-started {
+            height: 16px;
+        }
 
-		.rune-quests-completed {
-			background: #53fc24;
-		}
+        .rune-quests-completed {
+            background: #53fc24;
+        }
 
-		.rune-quests-started {
-			background: #6df5ff;
-		}
+        .rune-quests-started {
+            background: #6df5ff;
+        }
 
-		.rune-quests-not-started {
-			background: rgba(255, 255, 255, 0.12);
-		}
-	}
+        .rune-quests-not-started {
+            background: rgba(255, 255, 255, 0.12);
+        }
+    }
 
-	.rune-quest-list {
-		margin-top: 12px;
-		flex: 1 1 auto;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 4px;
-		padding: 8px;
-		overflow-y: auto;
+    .rune-quest-list {
+        margin-top: 12px;
+        flex: 1 1 auto;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        padding: 8px;
+        overflow-y: auto;
 
-		.rune-quest {
-			text-decoration: none;
-			padding: 4px;
-			color: #fff;
-			display: block;
-			transition: 0.2s;
+        .rune-quest {
+            text-decoration: none;
+            padding: 4px;
+            color: #fff;
+            display: block;
+            transition: 0.2s;
 
-			&.rune-quest-completed {
-				color: #53fc24;
-			}
+            &.rune-quest-completed {
+                color: #53fc24;
+            }
 
-			&.rune-quest-started {
-				color: #6df5ff;
-			}
+            &.rune-quest-started {
+                color: #6df5ff;
+            }
 
-			&:hover {
-				opacity: 0.5;
-			}
-		}
-	}
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
 }

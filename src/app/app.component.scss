@@ -2,9 +2,9 @@ $padding: 48px;
 $mobile-padding: 24px;
 
 main {
-	padding: (64 + $padding) $padding $padding;
+    padding: (64 + $padding) $padding $padding;
 
-	@media screen and (max-width: 769px) {
-		padding: (64 + $mobile-padding) $mobile-padding $mobile-padding;
-	}
+    @media screen and (max-width: 769px) {
+        padding: (64 + $mobile-padding) $mobile-padding $mobile-padding;
+    }
 }

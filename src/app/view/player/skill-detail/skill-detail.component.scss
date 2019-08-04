@@ -1,49 +1,49 @@
 .rune-sub-header {
-	display: flex;
-	margin-bottom: 16px;
-	align-items: center;
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
 
-	h2 {
-		margin: 0;
+    h2 {
+        margin: 0;
 
-		@media screen and (max-width: 769px) {
-			font-size: 18px;
-		}
-	}
+        @media screen and (max-width: 769px) {
+            font-size: 18px;
+        }
+    }
 
-	button {
-		margin-right: 8px;
-	}
+    button {
+        margin-right: 8px;
+    }
 }
 
 .rune-info-container {
-	font-size: 16px;
-	
-	table {
-		width: 100%;
+    font-size: 16px;
 
-		th {
-			text-align: left;
-			font-weight: bold;
-		}
+    table {
+        width: 100%;
 
-		td {
-			font-family: 'Courier New', monospace;
-		}
+        th {
+            text-align: left;
+            font-weight: bold;
+        }
 
-		+ table {
-			margin-top: 16px;
-		}
-	}
+        td {
+            font-family: 'Courier New', monospace;
+        }
+
+        + table {
+            margin-top: 16px;
+        }
+    }
 }
 
 .rune-chart-container {
-	margin-top: 16px;
-	height: 400px;
-	max-height: 400px;
+    margin-top: 16px;
+    height: 400px;
+    max-height: 400px;
 
-	@media screen and (max-width: 769px) {
-		height: 250px;
-		max-height: 250px;
-	}
+    @media screen and (max-width: 769px) {
+        height: 250px;
+        max-height: 250px;
+    }
 }

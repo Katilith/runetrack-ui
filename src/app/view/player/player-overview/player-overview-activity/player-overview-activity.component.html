@@ -1,18 +1,18 @@
 <mat-card [ngClass]="{ 'rune-tabbed': tabbed }">
-	<div class="rune-activity-header">
-		<h2 class="mat-title">Recent Activity</h2>
-	</div>
+    <div class="rune-activity-header">
+        <h2 class="mat-title">Recent Activity</h2>
+    </div>
 
-	<div class="rune-activities">
-		<div class="rune-activity" *ngFor="let activity of activities; index as idx" (click)="expandActivity(idx)">
-			<div [className]="activity | runeActivityIcon"></div>
+    <div class="rune-activities">
+        <div class="rune-activity" *ngFor="let activity of activities; index as idx" (click)="expandActivity(idx)">
+            <div [className]="activity | runeActivityIcon"></div>
 
-			<div class="rune-activity-details">
-				<div class="rune-activity-name">{{ activity.text }}</div>
-				<div class="rune-activity-date">{{ activity.moment | runeMomentDate : 'DD-MMM-YYYY hh:mm' }} UTC</div>
-			</div>
+            <div class="rune-activity-details">
+                <div class="rune-activity-name">{{ activity.text }}</div>
+                <div class="rune-activity-date">{{ activity.moment | runeMomentDate : 'DD-MMM-YYYY hh:mm' }} UTC</div>
+            </div>
 
-			<div class="rune-activity-description" *ngIf="activityIdx === idx">{{ activity.details }}</div>
-		</div>
-	</div>
+            <div class="rune-activity-description" *ngIf="activityIdx === idx">{{ activity.details }}</div>
+        </div>
+    </div>
 </mat-card>

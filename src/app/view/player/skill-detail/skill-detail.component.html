@@ -1,95 +1,97 @@
 <div *ngIf="!loading; else loadingTemplate">
-	<div class="rune-sub-header">
-		<button mat-icon-button matTooltip="Go Back" [routerLink]="backRoute"><mat-icon>arrow_back</mat-icon></button>
-		<h2 class="mat-title">{{ skillName }} Monthly Gains</h2>
-	</div>
+    <div class="rune-sub-header">
+        <button mat-icon-button matTooltip="Go Back" [routerLink]="backRoute">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h2 class="mat-title">{{ skillName }} Monthly Gains</h2>
+    </div>
 
-	<mat-card class="rune-info-container">
-		<table *ngIf="!isMobileSize; else mobileTableTemplate">
-			<thead>
-				<tr>
-					<th>Level</th>
-					<th>XP</th>
-					<th>Total XP Gain</th>
+    <mat-card class="rune-info-container">
+        <table *ngIf="!isMobileSize; else mobileTableTemplate">
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>XP</th>
+                    <th>Total XP Gain</th>
 
-					<ng-container *ngIf="currentMonthData">
-						<th>Average XP Gain</th>
-						<th>Gains This Month</th>
-						<th>Rank This Month</th>
-					</ng-container>
-				</tr>
-			</thead>
+                    <ng-container *ngIf="currentMonthData">
+                        <th>Average XP Gain</th>
+                        <th>Gains This Month</th>
+                        <th>Rank This Month</th>
+                    </ng-container>
+                </tr>
+            </thead>
 
-			<tbody>
-				<tr>
-					<td>{{ currentLevel }}</td>
-					<td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
-					<td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
+            <tbody>
+                <tr>
+                    <td>{{ currentLevel }}</td>
+                    <td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
+                    <td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
 
-					<ng-container *ngIf="currentMonthData">
-						<td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
-						<td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
-						<td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
-					</ng-container>
-				</tr>
-			</tbody>
-		</table>
+                    <ng-container *ngIf="currentMonthData">
+                        <td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
+                        <td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
+                        <td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
 
-		<ng-template #mobileTableTemplate>
-			<table>
-				<thead>
-					<tr>
-						<th>Level</th>
-						<th>XP</th>
-						<th>Total XP Gain</th>
-					</tr>
-				</thead>
+        <ng-template #mobileTableTemplate>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>XP</th>
+                        <th>Total XP Gain</th>
+                    </tr>
+                </thead>
 
-				<tbody>
-					<tr>
-						<td>{{ currentLevel }}</td>
-						<td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
-						<td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
-					</tr>
-				</tbody>
-			</table>
+                <tbody>
+                    <tr>
+                        <td>{{ currentLevel }}</td>
+                        <td>{{ xpGains.totalXp | number: '1.0-0' }}</td>
+                        <td>{{ xpGains.totalGain | number: '1.0-0' }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-			<table *ngIf="currentMonthData">
-				<thead>
-					<tr>
-						<th>Average XP Gain</th>
-						<th>Gains This Month</th>
-						<th>Rank This Month</th>
-					</tr>
-				</thead>
+            <table *ngIf="currentMonthData">
+                <thead>
+                    <tr>
+                        <th>Average XP Gain</th>
+                        <th>Gains This Month</th>
+                        <th>Rank This Month</th>
+                    </tr>
+                </thead>
 
-				<tbody>
-					<tr>
-						<td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
-						<td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
-						<td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</ng-template>
-	</mat-card>
+                <tbody>
+                    <tr>
+                        <td>{{ xpGains.averageXpGain | number: '1.0-0' }}</td>
+                        <td>{{ currentMonthData.xpGain | number: '1.0-0' }}</td>
+                        <td>{{ currentMonthData.rank | number: '1.0-0' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </mat-card>
 
-	<mat-card class="rune-chart-container" *ngIf="xpGains.monthData.length !== 0; else chartErrorTemplate">
-		<canvas baseChart
-				[datasets]="barChartData"
-				[labels]="barChartLabels"
-				[options]="barChartOptions"
-				[legend]="barChartLegend"
-				[colors]="barChartColors"
-				[chartType]="barChartType"></canvas>
-	</mat-card>
+    <mat-card class="rune-chart-container" *ngIf="xpGains.monthData.length !== 0; else chartErrorTemplate">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [colors]="barChartColors"
+                [chartType]="barChartType"></canvas>
+    </mat-card>
 
-	<ng-template #chartErrorTemplate>
-		<rune-error message="Monthly data is currently not available for this skill, please check back later."
-					[marginTop]="16"></rune-error>
-	</ng-template>
+    <ng-template #chartErrorTemplate>
+        <rune-error message="Monthly data is currently not available for this skill, please check back later."
+                    [marginTop]="16"></rune-error>
+    </ng-template>
 </div>
 
 <ng-template #loadingTemplate>
-	<rune-loader></rune-loader>
+    <rune-loader></rune-loader>
 </ng-template>

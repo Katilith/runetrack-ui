@@ -9,19 +9,19 @@ import { IosInstallComponent } from './ios-install/ios-install.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-	declarations: [ HeaderComponent, IosInstallComponent, FooterComponent ],
-	exports: [ HeaderComponent, IosInstallComponent, FooterComponent ],
-	entryComponents: [IosInstallComponent],
-	imports: [
-		CommonModule,
-		RouterModule,
-		FormsModule,
-		MatToolbarModule,
-		MatButtonModule,
-		MatInputModule,
-		MatIconModule,
-		MatSnackBarModule
-	]
+    declarations: [ HeaderComponent, IosInstallComponent, FooterComponent ],
+    exports: [ HeaderComponent, IosInstallComponent, FooterComponent ],
+    entryComponents: [ IosInstallComponent ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
+        MatSnackBarModule
+    ]
 })
 export class LayoutModule {
 }

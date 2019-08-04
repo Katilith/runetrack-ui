@@ -7,22 +7,22 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LandingComponent', () => {
-	let component: LandingComponent;
-	let fixture: ComponentFixture<LandingComponent>;
-	
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			imports: [ BrowserAnimationsModule, LandingModule, RouterTestingModule, HttpClientTestingModule ]
-		}).compileComponents();
-	}));
-	
-	beforeEach(() => {
-		fixture = TestBed.createComponent(LandingComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
-	
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
+    let component: LandingComponent;
+    let fixture: ComponentFixture<LandingComponent>;
+    
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            imports: [ BrowserAnimationsModule, LandingModule, RouterTestingModule, HttpClientTestingModule ]
+        }).compileComponents();
+    }));
+    
+    beforeEach(() => {
+        fixture = TestBed.createComponent(LandingComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+    
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

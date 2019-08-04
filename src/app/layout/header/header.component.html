@@ -1,17 +1,20 @@
 <mat-toolbar color="primary" class="mat-elevation-z3">
-	<img src="assets/img/runetrack-nobg.png" alt="" (click)="goHome()" />
+    <img src="assets/img/runetrack-nobg.png" alt="" (click)="goHome()"/>
 
-	<h1 (click)="goHome()">RuneTrack</h1>
+    <h1 (click)="goHome()">RuneTrack</h1>
 
-	<div class="rune-spacer"></div>
+    <div class="rune-spacer"></div>
 
-	<form (submit)="searchForUser()">
-		<mat-form-field appearance="outline" class="rune-small-field" [ngStyle]="{ 'font-size': '13px' }" floatLabel="never" color="accent">
-			<mat-icon matPrefix>search</mat-icon>
-			<input matInput placeholder="Find player..." name="runetrack-find-user" [(ngModel)]="searchUsername" autocomplete="off" maxlength="12" />
-			<button mat-button *ngIf="searchUsername" matSuffix mat-icon-button aria-label="Clear" (click)="searchUsername = ''" type="button">
-				<mat-icon>close</mat-icon>
-			</button>
-		</mat-form-field>
-	</form>
+    <form (submit)="searchForUser()">
+        <mat-form-field appearance="outline" class="rune-small-field" [ngStyle]="{ 'font-size': '13px' }"
+                        floatLabel="never" color="accent">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Find player..." name="runetrack-find-user" [(ngModel)]="searchUsername"
+                   autocomplete="off" maxlength="12"/>
+            <button mat-button *ngIf="searchUsername" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="searchUsername = ''" type="button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
 </mat-toolbar>

@@ -1,51 +1,51 @@
 .mat-card {
-	margin: 16px;
-	min-width: 280px;
-	display: flex;
-	flex-wrap: wrap;
+    margin: 16px;
+    min-width: 280px;
+    display: flex;
+    flex-wrap: wrap;
 
-	.rune-skill {
-		width: calc(100% / 3 - 8px);
-		margin: 4px;
-		padding: 8px;
-		box-sizing: border-box;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 4px;
-		cursor: pointer;
+    .rune-skill {
+        width: calc(100% / 3 - 8px);
+        margin: 4px;
+        padding: 8px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        cursor: pointer;
 
-		.rune-skill-level {
-			font-size: 24px;
-		}
-	}
+        .rune-skill-level {
+            font-size: 24px;
+        }
+    }
 
-	rune-skill-overview {
-		width: 100%;
-		margin: 4px;
-	}
+    rune-skill-overview {
+        width: 100%;
+        margin: 4px;
+    }
 
-	.rune-full-skill {
-		width: 100%;
-		margin: 4px;
-		padding: 8px;
-		box-sizing: border-box;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 4px;
+    .rune-full-skill {
+        width: 100%;
+        margin: 4px;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
 
-		.rune-skill-header {
-			display: flex;
-			align-items: center;
-			font-size: 20px;
+        .rune-skill-header {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
 
-			.skill-icon {
-				margin-right: 8px;
-			}
+            .skill-icon {
+                margin-right: 8px;
+            }
 
-			.rune-skill-name {
-				flex: 1 1 auto;
-			}
-		}
-	}
+            .rune-skill-name {
+                flex: 1 1 auto;
+            }
+        }
+    }
 }

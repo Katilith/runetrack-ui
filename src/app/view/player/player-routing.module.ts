@@ -5,25 +5,25 @@ import { PlayerOverviewComponent } from './player-overview/player-overview.compo
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: PlayerComponent,
-		children: [
-			{
-				path: 'skills/:skillName',
-				component: SkillDetailComponent
-			},
-			{
-				path: '',
-				component: PlayerOverviewComponent
-			}
-		]
-	}
+    {
+        path: '',
+        component: PlayerComponent,
+        children: [
+            {
+                path: 'skills/:skillName',
+                component: SkillDetailComponent
+            },
+            {
+                path: '',
+                component: PlayerOverviewComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+    imports: [ RouterModule.forChild(routes) ],
+    exports: [ RouterModule ]
 })
 export class PlayerRoutingModule {
 }

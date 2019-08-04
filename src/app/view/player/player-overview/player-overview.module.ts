@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
-	MatButtonModule,
-	MatCardModule,
-	MatDividerModule,
-	MatIconModule,
-	MatTabsModule,
-	MatTooltipModule
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    MatTabsModule,
+    MatTooltipModule
 } from '@angular/material';
 
 import { RsModule } from '../../../shared/rs/rs.module';
@@ -19,31 +19,31 @@ import { PlayerOverviewActivityComponent } from './player-overview-activity/play
 import { SkillOverviewComponent } from './player-overview-skills/skill-overview/skill-overview.component';
 
 @NgModule({
-	declarations: [
-		PlayerOverviewComponent,
-		PlayerOverviewSkillsComponent,
-		PlayerOverviewQuestsComponent,
-		PlayerOverviewActivityComponent,
-		SkillOverviewComponent
-	],
-	exports: [
-		PlayerOverviewComponent
-	],
-	providers: [
-		DecimalPipe
-	],
-	imports: [
-		CommonModule,
-		RouterModule,
-		MatIconModule,
-		MatCardModule,
-		MatTooltipModule,
-		MatButtonModule,
-		MatDividerModule,
-		MatTabsModule,
-		RsModule,
-		LoaderModule
-	]
+    declarations: [
+        PlayerOverviewComponent,
+        PlayerOverviewSkillsComponent,
+        PlayerOverviewQuestsComponent,
+        PlayerOverviewActivityComponent,
+        SkillOverviewComponent
+    ],
+    exports: [
+        PlayerOverviewComponent
+    ],
+    providers: [
+        DecimalPipe
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatIconModule,
+        MatCardModule,
+        MatTooltipModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatTabsModule,
+        RsModule,
+        LoaderModule
+    ]
 })
 export class PlayerOverviewModule {
 }

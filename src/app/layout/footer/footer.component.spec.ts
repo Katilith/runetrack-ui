@@ -4,27 +4,27 @@ import { FooterComponent } from './footer.component';
 import { version } from '../../util/version';
 
 describe('FooterComponent', () => {
-	let component: FooterComponent;
-	let fixture: ComponentFixture<FooterComponent>;
-	
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [ FooterComponent ]
-		})
-			.compileComponents();
-	}));
-	
-	beforeEach(() => {
-		fixture = TestBed.createComponent(FooterComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
-	
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
-
-	it('should show the correct version number', () => {
-		expect(component.version).toBe(version);
-	});
+    let component: FooterComponent;
+    let fixture: ComponentFixture<FooterComponent>;
+    
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ FooterComponent ]
+        })
+            .compileComponents();
+    }));
+    
+    beforeEach(() => {
+        fixture = TestBed.createComponent(FooterComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+    
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+    
+    it('should show the correct version number', () => {
+        expect(component.version).toBe(version);
+    });
 });

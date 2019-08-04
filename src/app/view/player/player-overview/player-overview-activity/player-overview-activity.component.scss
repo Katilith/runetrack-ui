@@ -1,69 +1,69 @@
 .mat-card {
-	margin: 16px;
-	min-width: 280px;
-	height: 560px;
-	max-height: 560px;
-	display: flex;
-	flex-direction: column;
+    margin: 16px;
+    min-width: 280px;
+    height: 560px;
+    max-height: 560px;
+    display: flex;
+    flex-direction: column;
 
-	&.rune-tabbed {
-		height: auto;
-		max-height: initial;
-	}
+    &.rune-tabbed {
+        height: auto;
+        max-height: initial;
+    }
 
-	.rune-activity-header {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-		padding-bottom: 4px;
+    .rune-activity-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 4px;
 
-		h2 {
-			margin: 0;
-			padding: 0;
-		}
-	}
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
 
-	.rune-activities {
-		overflow-y: auto;
-		flex: 1 1 auto;
+    .rune-activities {
+        overflow-y: auto;
+        flex: 1 1 auto;
 
-		.rune-activity {
-			margin-top: 8px;
-			padding-top: 8px;
-			border-top: 1px solid rgba(255, 255, 255, 0.12);
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			cursor: help;
+        .rune-activity {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            cursor: help;
 
-			&:first-of-type {
-				border-top-width: 0;
-				padding-top: 0;
-			}
+            &:first-of-type {
+                border-top-width: 0;
+                padding-top: 0;
+            }
 
-			.rune-activity-icon {
-				margin-right: 8px;
-				width: 30px;
-				flex-shrink: 0;
-			}
+            .rune-activity-icon {
+                margin-right: 8px;
+                width: 30px;
+                flex-shrink: 0;
+            }
 
-			.rune-activity-details {
-				flex: 1 1 auto;
+            .rune-activity-details {
+                flex: 1 1 auto;
 
-				.rune-activity-name {
-					font-weight: 500;
-				}
+                .rune-activity-name {
+                    font-weight: 500;
+                }
 
-				.rune-activity-date {
-					font-weight: 300;
-				}
-			}
+                .rune-activity-date {
+                    font-weight: 300;
+                }
+            }
 
-			.rune-activity-description {
-				margin: 4px 0 0 38px;
-				padding-right: 8px;
-				font-style: italic;
-				width: 100%;
-				box-sizing: border-box;
-			}
-		}
-	}
+            .rune-activity-description {
+                margin: 4px 0 0 38px;
+                padding-right: 8px;
+                font-style: italic;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    }
 }

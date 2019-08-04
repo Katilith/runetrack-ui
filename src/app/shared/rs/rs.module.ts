@@ -6,20 +6,20 @@ import { ActivityIconPipe } from './pipe/activity-icon.pipe';
 import { NumberPipe } from './pipe/number.pipe';
 
 @NgModule({
-	declarations: [
-		SkillIconPipe,
-		QuestClassPipe,
-		MomentDatePipe,
-		ActivityIconPipe,
-		NumberPipe
-	],
-	exports: [
-		SkillIconPipe,
-		QuestClassPipe,
-		MomentDatePipe,
-		ActivityIconPipe,
-		NumberPipe
-	]
+    declarations: [
+        SkillIconPipe,
+        QuestClassPipe,
+        MomentDatePipe,
+        ActivityIconPipe,
+        NumberPipe
+    ],
+    exports: [
+        SkillIconPipe,
+        QuestClassPipe,
+        MomentDatePipe,
+        ActivityIconPipe,
+        NumberPipe
+    ]
 })
 export class RsModule {
 }

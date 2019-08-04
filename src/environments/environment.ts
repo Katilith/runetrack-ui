@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	production: false,
-	rsApi: {
-		avatars: '/rs-avatars',
-		apps: '/rs-apps',
-		services: '/rs-services'
-	}
+    production: false,
+    rsApi: {
+        avatars: '/rs-avatars',
+        apps: '/rs-apps',
+        services: '/rs-services'
+    }
 };
 
 /*

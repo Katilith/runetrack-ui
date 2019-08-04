@@ -11,20 +11,20 @@ import { PlayerService } from '../player.service';
 import { NumberPipe } from '../../../shared/rs/pipe/number.pipe';
 
 @NgModule({
-	declarations: [ SkillDetailComponent ],
-	exports: [ SkillDetailComponent ],
-	providers: [ PlayerService, NumberPipe ],
-	imports: [
-		CommonModule,
-		RouterModule,
-		MatTooltipModule,
-		MatCardModule,
-		MatIconModule,
-		MatButtonModule,
-		ChartsModule,
-		ErrorModule,
-		LoaderModule
-	]
+    declarations: [ SkillDetailComponent ],
+    exports: [ SkillDetailComponent ],
+    providers: [ PlayerService, NumberPipe ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatTooltipModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        ChartsModule,
+        ErrorModule,
+        LoaderModule
+    ]
 })
 export class SkillDetailModule {
 }
