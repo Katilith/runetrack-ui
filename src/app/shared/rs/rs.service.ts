@@ -14,9 +14,6 @@ import {
 } from './rs.domain';
 import * as moment from 'moment';
 
-const RS_APPS = environment.rsApi.apps;
-const RS_AVATARS = environment.rsApi.avatars;
-
 /**
  * @TODO Unit Testing
  */
@@ -55,7 +52,7 @@ export class RsService {
         clearSubscription(this.clanDataSub);
         
         return new Promise(((resolve, reject) => {
-            this.clanDataSub = this.http.get(`${environment.rsApi.services}/clans/${clanName}`, {observe: 'response', responseType: 'text'})
+            this.clanDataSub = this.http.get(`${ environment.api }/clans/${clanName}`, { observe: 'response', responseType: 'text' })
                 .subscribe(response => {
                     const clanContent = response.body;
                     if(!clanContent) {
@@ -111,12 +108,10 @@ export class RsService {
     public getQuestData(playerName: string): Promise<QuestDataResponse> {
         clearSubscription(this.questDataSub);
         
-        const url = `${RS_APPS}/runemetrics/quests`;
-        const params = new HttpParams()
-            .append('user', playerName);
+        const url = `${ environment.api }/profiles/${ playerName }/quests`;
         
         return new Promise((resolve, reject) => {
-            this.playerProfileSub = this.http.get<QuestDataResponse>(url, {params})
+            this.playerProfileSub = this.http.get<QuestDataResponse>(url)
                 .subscribe(response => {
                     if(!response) {
                         reject('UNKNOWN_ERROR');
@@ -130,13 +125,10 @@ export class RsService {
     public getMonthlySkillGains(playerName: string, skillId: number): Promise<MonthlyXpGainResponse> {
         clearSubscription(this.skillGainsSub);
         
-        const url = `${RS_APPS}/runemetrics/xp-monthly`;
-        const params = new HttpParams()
-            .append('searchName', playerName)
-            .append('skillid', skillId.toString());
+        const url = `${ environment.api }/profiles/${ playerName }/skills/${ skillId }`;
         
         return new Promise((resolve, reject) => {
-            this.playerProfileSub = this.http.get<MonthlyXpGainResponse>(url, {params})
+            this.playerProfileSub = this.http.get<MonthlyXpGainResponse>(url)
                 .subscribe(response => {
                     if(!response) {
                         reject('UNKNOWN_ERROR');
@@ -147,16 +139,13 @@ export class RsService {
         });
     }
     
-    public getPlayerProfile(playerName: string, activityCount: number = 20): Promise<PlayerProfile> {
+    public getPlayerProfile(playerName: string): Promise<PlayerProfile> {
         clearSubscription(this.playerProfileSub);
         
-        const url = `${RS_APPS}/runemetrics/profile/profile`;
-        const params = new HttpParams()
-            .append('user', playerName)
-            .append('activities', activityCount.toString());
+        const url = `${ environment.api }/profiles/${ playerName }`;
         
         return new Promise((resolve, reject) => {
-            this.playerProfileSub = this.http.get<PlayerProfile>(url, {params})
+            this.playerProfileSub = this.http.get<PlayerProfile>(url)
                 .subscribe(response => {
                     if(!response) {
                         reject('UNKNOWN_ERROR');

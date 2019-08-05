@@ -4,11 +4,7 @@
 
 export const environment = {
     production: false,
-    rsApi: {
-        avatars: '/rs-avatars',
-        apps: '/rs-apps',
-        services: '/rs-services'
-    }
+    api: '/service'
 };
 
 /*
