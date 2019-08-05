@@ -3,7 +3,15 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { clearSubscription } from '../../util/subscription-helper';
-import { MonthlyXpGainResponse, PlayerActivity, PlayerProfile, PlayerSkill, QuestDataResponse } from './rs.domain';
+import {
+    ClanInfo,
+    ClanMember,
+    MonthlyXpGainResponse,
+    PlayerActivity,
+    PlayerProfile,
+    PlayerSkill,
+    QuestDataResponse
+} from './rs.domain';
 import * as moment from 'moment';
 
 const RS_APPS = environment.rsApi.apps;
@@ -20,9 +28,9 @@ export class RsService {
     private playerProfileSub: Subscription = null;
     private skillGainsSub: Subscription = null;
     private questDataSub: Subscription = null;
+    private clanDataSub: Subscription = null;
     
     public constructor(private http: HttpClient) {
-        // this.getClanDetails('A Discordants Dream');
     }
     
     public getFavoritePlayer(): string {
@@ -43,39 +51,61 @@ export class RsService {
         return (savedPlayer !== null && savedPlayer === playerName);
     }
     
-    public getClanDetails(clanName): void {
-        this.http.get(`${environment.rsApi.services}/clans/${clanName}`, {observe: 'response', responseType: 'text'})
-            .subscribe(response => {
-                const clanContent = response.body;
-                if(!clanContent) {
-                    return;
-                }
-                
-                const clanDataLines = clanContent.split('\n');
-                
-                if(clanDataLines.length < 2) {
-                    return;
-                }
-                
-                const clanMembers = [];
-                
-                for(const clanDataLine of clanDataLines) {
-                    if(!clanDataLine || clanDataLine.trim() === '' || clanDataLine === 'Clanmate, Clan Rank, Total XP, Kills') {
-                        continue;
+    public getClanDetails(clanName): Promise<ClanInfo> {
+        clearSubscription(this.clanDataSub);
+        
+        return new Promise(((resolve, reject) => {
+            this.clanDataSub = this.http.get(`${environment.rsApi.services}/clans/${clanName}`, {observe: 'response', responseType: 'text'})
+                .subscribe(response => {
+                    const clanContent = response.body;
+                    if(!clanContent) {
+                        reject();
+                        return;
+                    }
+            
+                    const clanDataLines = clanContent.split('\n');
+            
+                    if(clanDataLines.length < 2) {
+                        reject();
+                        return;
                     }
                     
-                    const clanMemberData = clanDataLine.split(',');
-                    
-                    clanMembers.push({
-                        playerName: clanMemberData[ 0 ].replace(/�/g, ' '),
-                        clanRank: clanMemberData[ 1 ],
-                        totalXp: parseInt(clanMemberData[ 2 ], 10),
-                        kills: parseInt(clanMemberData[ 3 ], 10)
-                    });
-                }
+                    let totalXp: number = 0;
+                    let totalKills: number = 0;
+                    let averageTotalXp: number = 0;
+                    let averageTotalKills: number = 0;
+            
+                    const members: ClanMember[] = [];
+            
+                    for(const clanDataLine of clanDataLines) {
+                        if(!clanDataLine || clanDataLine.trim() === '' || clanDataLine === 'Clanmate, Clan Rank, Total XP, Kills') {
+                            continue;
+                        }
                 
-                console.log(clanMembers);
-            });
+                        const clanMemberData = clanDataLine.split(',');
+                
+                        const member = {
+                            playerName: clanMemberData[ 0 ].replace(/�/g, ' '),
+                            clanRank: clanMemberData[ 1 ],
+                            totalXp: parseInt(clanMemberData[ 2 ], 10),
+                            kills: parseInt(clanMemberData[ 3 ], 10)
+                        };
+                        
+                        totalXp += member.totalXp;
+                        totalKills += member.kills;
+    
+                        members.push(member);
+                    }
+            
+                    if(members.length !== 0) {
+                        averageTotalXp = totalXp / members.length;
+                        averageTotalKills = totalKills / members.length;
+                        resolve({ totalMembers: members.length, totalXp, totalKills, averageTotalXp, averageTotalKills, members });
+                    } else {
+                        reject();
+                    }
+                }, () => reject());
+        }));
     }
     
     public getQuestData(playerName: string): Promise<QuestDataResponse> {

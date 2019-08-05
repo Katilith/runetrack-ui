@@ -64,3 +64,19 @@ export interface PlayerSkill {
     level: number;
     xp: number;
 }
+
+export interface ClanMember {
+    playerName: string;
+    clanRank: string;
+    totalXp: number;
+    kills: number;
+}
+
+export interface ClanInfo {
+    totalMembers: number;
+    totalXp: number;
+    averageTotalXp: number;
+    totalKills: number;
+    averageTotalKills: number;
+    members: ClanMember[];
+}

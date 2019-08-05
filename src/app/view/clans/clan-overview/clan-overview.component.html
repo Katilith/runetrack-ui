@@ -1,1 +1,73 @@
-<p>clan-overview works!</p>
+<ng-container *ngIf="loading; then loadingTemplate else loadedTemplate"></ng-container>
+
+<ng-template #loadingTemplate>
+    <rune-loader></rune-loader>
+</ng-template>
+
+<ng-template #loadedTemplate>
+    <ng-container *ngIf="error; else clanTemplate">
+        <h1 class="mat-display-1 rune-error">
+            <rune-error [fontSize]="32" [padding]="32" [center]="!isMobileSize"
+                        message="We are unable to find the specified clan, please try again later."></rune-error>
+        </h1>
+    </ng-container>
+</ng-template>
+
+<ng-template #clanTemplate>
+    <div class="rune-header">
+        <h1 [ngClass]="{ 'mat-display-2': !isMobileSize, 'mat-display-1': isMobileSize }">{{ clanName }}</h1>
+    </div>
+
+    <mat-card class="rune-clan-info">
+        <div class="rune-clan-details">
+            <div class="rune-clan-detail">
+                <img src="assets/img/clan-chat-icon.png" alt="" />
+                <div>Total Members: <span>{{ clanInfo.totalMembers }}</span></div>
+            </div>
+
+            <div class="rune-clan-detail">
+                <img src="assets/img/skills-icon.png" alt="" />
+                <div>Total Experience: <span>{{ clanInfo.totalXp | number: '1.0-0' }}</span></div>
+            </div>
+
+            <div class="rune-clan-detail">
+                <img src="assets/img/skills-icon.png" alt="" />
+                <div>Average Experience: <span>{{ clanInfo.averageTotalXp | number: '1.0-0' }}</span></div>
+            </div>
+
+            <div class="rune-clan-detail">
+                <img src="assets/img/combat-level-icon.png" alt="" />
+                <div>Total Kills: <span>{{ clanInfo.totalKills | number: '1.0-0' }}</span></div>
+            </div>
+
+            <div class="rune-clan-detail">
+                <img src="assets/img/combat-level-icon.png" alt="" />
+                <div>Average Kills: <span>{{ clanInfo.averageTotalKills | number: '1.0-2' }}</span></div>
+            </div>
+        </div>
+
+        <img class="rune-clan-motif" [src]="'http://services.runescape.com/m=avatar-rs/' + clanName + '/clanmotif.png'" alt="[ Clan Motif ]" />
+    </mat-card>
+
+    <div class="rune-clan-members">
+        <mat-card *ngFor="let player of clanInfo.members" (click)="goToPlayerOverview(player.playerName)">
+            <img class="rune-player-image" [src]="'https://services.runescape.com/m=avatar-rs/' + player.playerName + '/chat.png'" alt="" />
+
+            <div>
+                <div>
+                    <strong>{{ player.playerName }}</strong> | {{ player.clanRank }}
+                </div>
+
+                <div class="rune-num" matTooltip="Total XP">
+                    <img src="assets/img/skills-icon.png" alt="" />
+                    {{ player.totalXp | number: '1.0-0' }}
+                </div>
+
+                <div class="rune-num" matTooltip="Total Kills">
+                    <img src="assets/img/combat-level-icon.png" alt="" />
+                    {{ player.kills | number: '1.0-0' }}
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</ng-template>

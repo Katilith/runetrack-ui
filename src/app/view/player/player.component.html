@@ -15,7 +15,7 @@
 
 <ng-template #profileTemplate>
     <div class="rune-header">
-        <img [src]="'https://secure.runescape.com/m=avatar-rs/' + profile.name + '/chat.png'" alt=""/>
+        <img [src]="'https://services.runescape.com/m=avatar-rs/' + profile.name + '/chat.png'" alt=""/>
         <h1 [ngClass]="{ 'mat-display-2': !isMobileSize, 'mat-display-1': isMobileSize }">{{ profile.name }}</h1>
 
         <div class="rune-favorite" *ngIf="isFavorite !== null">
