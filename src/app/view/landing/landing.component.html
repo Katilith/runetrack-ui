@@ -1,7 +1,7 @@
 <div class="rune-landing">
     <div class="rune-landing-container" *ngIf="!loading; else loadingTemplate">
         <div class="rune-landing-header">
-            <img src="assets/img/runetrack-nobg.png" alt=""/>
+            <img src="assets/img/runetrack.svg" alt=""/>
             <h1 class="mat-display-2">RuneTrack</h1>
         </div>
 
@@ -19,4 +19,8 @@
     <ng-template #loadingTemplate>
         <rune-loader></rune-loader>
     </ng-template>
+
+    <div class="rune-footer-container">
+        <rune-footer></rune-footer>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { version } from '../../util/version';
+import { version, angularVersion } from '../../util/version';
 
 @Component({
     selector: 'rune-footer',
@@ -16,6 +16,10 @@ export class FooterComponent implements OnInit {
     
     public get version() {
         return version;
+    }
+
+    public get angularVersion() {
+        return angularVersion;
     }
     
 }

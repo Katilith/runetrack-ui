@@ -12,6 +12,7 @@ import {
 
 import { LoaderModule } from '../../shared/loader/loader.module';
 import { LandingComponent } from './landing.component';
+import { LayoutModule } from '../../layout/layout.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LandingComponent } from './landing.component';
         MatInputModule,
         MatIconModule,
         MatButtonModule,
-        LoaderModule
+        LoaderModule,
+        LayoutModule
     ]
 })
 export class LandingModule {

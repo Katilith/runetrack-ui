@@ -14,9 +14,29 @@ footer {
         opacity: 0.3;
     }
 
-    .rune-version {
+    .rune-versions {
         opacity: 0.2;
         margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rune-version {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+
+            img {
+                display: inline-block;
+                height: 20px;
+                margin-right: 4px;
+            }
+
+            + .rune-version {
+                margin-left: 16px;
+            }
+        }
     }
 
     a {
