@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+
 import { PlayerMonthlyXpGain, PlayerSkill } from '../../../../../shared/rs/rs.domain';
 import { getXpRequiredForLevel, skillNames, Skills } from '../../../../../shared/rs/rs.constants';
-import { DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'rune-skill-overview',

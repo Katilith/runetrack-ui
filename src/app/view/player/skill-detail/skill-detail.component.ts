@@ -75,7 +75,7 @@ export class SkillDetailComponent implements OnInit {
     public ngOnInit(): void {
         this.route.params.subscribe(params => {
             if(!params.skillName) {
-                this.router.navigate([ 'p', this.playerService.profile.name ]);
+                this.router.navigate([ '/', this.playerService.profile.name ]);
                 return;
             }
             
@@ -83,7 +83,7 @@ export class SkillDetailComponent implements OnInit {
             const index = skillNamesLower.indexOf(skillName);
             
             if(index === -1) {
-                this.router.navigate([ 'p', this.playerService.profile.name ]);
+                this.router.navigate([ '/', this.playerService.profile.name ]);
                 return;
             }
             

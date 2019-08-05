@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ClanOverviewComponent } from './clan-overview.component';
+import { ClanOverviewModule } from './clan-overview.module';
 
 describe('ClanOverviewComponent', () => {
     let component: ClanOverviewComponent;
@@ -8,7 +11,7 @@ describe('ClanOverviewComponent', () => {
     
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ ClanOverviewComponent ]
+            imports: [ RouterTestingModule, HttpClientTestingModule, ClanOverviewModule ]
         }).compileComponents();
     }));
     
