@@ -1,7 +1,8 @@
+@use '~@angular/material' as mat;
 @import 'theme';
 
-@include mat-core();
-@include angular-material-theme($app-theme);
+@include mat.core();
+@include mat.all-component-themes($app-theme);
 
 html, body {
 	margin: 0;
@@ -10,7 +11,7 @@ html, body {
 }
 
 a {
-	color: mat-color($app-primary, 500);
+	color: mat.get-color-from-palette($app-primary, 500);
 }
 
 .mat-tooltip {
