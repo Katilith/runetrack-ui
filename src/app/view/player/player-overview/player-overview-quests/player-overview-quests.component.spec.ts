@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PlayerOverviewQuestsComponent } from './player-overview-quests.component';
 import { LoaderModule } from '../../../../shared/loader/loader.module';
@@ -12,7 +12,7 @@ describe('PlayerOverviewQuestsComponent', () => {
     let component: PlayerOverviewQuestsComponent;
     let fixture: ComponentFixture<PlayerOverviewQuestsComponent>;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ PlayerOverviewQuestsComponent ],
             imports: [ HttpClientTestingModule, LoaderModule, MatCardModule, MatTooltipModule, RsModule ],

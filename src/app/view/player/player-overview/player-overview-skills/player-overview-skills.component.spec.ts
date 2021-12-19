@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PlayerOverviewSkillsComponent } from './player-overview-skills.component';
 import { SkillOverviewComponent } from './skill-overview/skill-overview.component';
@@ -17,7 +17,7 @@ describe('PlayerOverviewSkillsComponent', () => {
     let component: PlayerOverviewSkillsComponent;
     let fixture: ComponentFixture<PlayerOverviewSkillsComponent>;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ PlayerOverviewSkillsComponent, SkillOverviewComponent ],
             imports: [ RouterTestingModule, HttpClientTestingModule,

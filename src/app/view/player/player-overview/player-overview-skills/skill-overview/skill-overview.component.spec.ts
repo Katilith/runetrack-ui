@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SkillOverviewComponent } from './skill-overview.component';
 import { RsModule } from '../../../../../shared/rs/rs.module';
@@ -13,7 +13,7 @@ describe('SkillOverviewComponent', () => {
     let component: SkillOverviewComponent;
     let fixture: ComponentFixture<SkillOverviewComponent>;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ SkillOverviewComponent ],
             imports: [ RouterTestingModule, MatIconModule, MatDividerModule, MatTooltipModule, RsModule, LoaderModule ],

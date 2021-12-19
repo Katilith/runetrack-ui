@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IosInstallComponent } from './ios-install.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,7 +10,7 @@ describe('IosInstallComponent', () => {
     let fixture: ComponentFixture<IosInstallComponent>;
     let snackBarRef: MatSnackBarRef<IosInstallComponent>;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ IosInstallComponent ],
             imports: [ MatIconModule, MatButtonModule ],

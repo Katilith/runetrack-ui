@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PlayerOverviewActivityComponent } from './player-overview-activity.component';
 import { RsModule } from '../../../../shared/rs/rs.module';
@@ -8,7 +8,7 @@ describe('PlayerOverviewActivityComponent', () => {
     let component: PlayerOverviewActivityComponent;
     let fixture: ComponentFixture<PlayerOverviewActivityComponent>;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ PlayerOverviewActivityComponent ],
             imports: [ RsModule, MatCardModule ]
