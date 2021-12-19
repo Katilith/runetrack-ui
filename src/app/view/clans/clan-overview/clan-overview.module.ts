@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ClanOverviewComponent } from './clan-overview.component';
 import { ErrorModule } from '../../../shared/error/error.module';
 import { LoaderModule } from '../../../shared/loader/loader.module';
-import { MatCardModule, MatTooltipModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [ ClanOverviewComponent ],

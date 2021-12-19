@@ -2,7 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerOverviewSkillsComponent } from './player-overview-skills.component';
 import { SkillOverviewComponent } from './skill-overview/skill-overview.component';
-import { MatCardModule, MatDividerModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RsModule } from '../../../../shared/rs/rs.module';
 import { LoaderModule } from '../../../../shared/loader/loader.module';
 import { RouterTestingModule } from '@angular/router/testing';

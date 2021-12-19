@@ -4,7 +4,9 @@ import { SkillOverviewComponent } from './skill-overview.component';
 import { RsModule } from '../../../../../shared/rs/rs.module';
 import { LoaderModule } from '../../../../../shared/loader/loader.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MatDividerModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { DecimalPipe } from '@angular/common';
 
 describe('SkillOverviewComponent', () => {

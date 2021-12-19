@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PlayerComponent } from './player.component';
 import { LoaderModule } from '../../shared/loader/loader.module';
 import { ErrorModule } from '../../shared/error/error.module';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PlayerService } from './player.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
