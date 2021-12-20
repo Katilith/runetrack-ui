@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PlayerOverviewComponent } from './player-overview.component';
 import { PlayerOverviewModule } from './player-overview.module';
@@ -11,7 +11,7 @@ describe('PlayerOverviewComponent', () => {
     let fixture: ComponentFixture<PlayerOverviewComponent>;
     let playerService: PlayerService;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             providers: [ PlayerService ],
             imports: [ BrowserAnimationsModule, PlayerOverviewModule, HttpClientTestingModule ]

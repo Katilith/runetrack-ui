@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MobileService } from './layout/mobile/mobile.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { IosInstallComponent } from './layout/ios-install/ios-install.component';
 
 @Component({

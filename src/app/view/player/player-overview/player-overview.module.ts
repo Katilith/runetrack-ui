@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatIconModule,
-    MatTabsModule,
-    MatTooltipModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { RsModule } from '../../../shared/rs/rs.module';
 import { LoaderModule } from '../../../shared/loader/loader.module';

@@ -1,7 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
-import { MatIconModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +14,7 @@ describe('HeaderComponent', () => {
     let fixture: ComponentFixture<HeaderComponent>;
     let router: Router;
     
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [ HeaderComponent ],
             imports: [ BrowserAnimationsModule, FormsModule, RouterTestingModule, MatIconModule, MatInputModule, MatToolbarModule ]
