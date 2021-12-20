@@ -1,3 +1,2 @@
-export const version = '0.4.0';
-
-export const angularVersion = '8.1.2';
+export const version = '1.0.0-beta.0';
+export const angularVersion = '13';

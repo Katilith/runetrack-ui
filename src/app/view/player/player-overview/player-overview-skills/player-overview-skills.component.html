@@ -17,7 +17,7 @@
          (click)="loadXpGains(skillId)">
         <ng-container *ngIf="skills[skillId]">
             <div [className]="skillId | runeSkillIcon"></div>
-            <div class="rune-skill-level">{{ skills[skillId].level }}</div>
+            <div class="rune-skill-level">{{ skillLevels[skillId] }}</div>
         </ng-container>
     </div>
 </mat-card>

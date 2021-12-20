@@ -11,7 +11,7 @@ footer {
     }
 
     .rune-disclaimer {
-        opacity: 0.3;
+        opacity: 0.2;
     }
 
     .rune-versions {
@@ -21,7 +21,7 @@ footer {
         align-items: center;
         justify-content: center;
 
-        .rune-version {
+        .rune-version, .rune-github {
             display: flex;
             align-items: center;
             color: #fff;
@@ -33,7 +33,7 @@ footer {
                 margin-right: 4px;
             }
 
-            + .rune-version {
+            + .rune-version, + .rune-github {
                 margin-left: 16px;
             }
         }

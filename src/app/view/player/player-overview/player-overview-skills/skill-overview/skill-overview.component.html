@@ -25,7 +25,7 @@
 
             <tbody>
                 <tr>
-                    <td>{{ skill.level }}</td>
+                    <td>{{ currentLevel }}</td>
                     <td>{{ skill.xp | number: '1.0-0' }}</td>
                     <td>{{ skill.rank | number: '1.0-0' }}</td>
                 </tr>
@@ -34,7 +34,7 @@
 
         <div class="rune-next-level" *ngIf="nextLevel !== null" [matTooltip]="remainingXpTooltip"
              matTooltipClass="rune-skill-tooltip">
-            <div>{{ skill.level }}</div>
+            <div>{{ currentLevel }}</div>
             <div class="rune-next-level-bar">
                 <div class="rune-complete" [ngStyle]="{ width: completePercent + '%' }"></div>
                 <div class="rune-incomplete" [ngStyle]="{ width: percentToNextLevel + '%' }"></div>
